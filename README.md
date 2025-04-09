@@ -4,39 +4,64 @@
 
 ## 문서 목록
 
-### 1. [Git 및 Cursor 설정 가이드](GIT_CURSOR.md)
-- GitHub 계정 생성 방법
-- Git 설치 및 기본 설정
-- Cursor IDE 설치 및 설정
+### 1. [Git 기본 설치 및 설정 가이드](GIT_BASIC.md)
+- Git 설치 방법 (Windows/Linux/macOS)
+- Git 기본 설정
+- GitHub 계정 설정
 - Git 주요 명령어 참고
 - 문제 해결 가이드
 
-### 2. [WSL 및 Cursor 원격 접속 가이드](WSL_CURSOR.md)
+### 2. [Cursor IDE와 Git 연동 가이드](GIT_CURSOR.md)
+- Cursor IDE 설치 및 설정
+- Git과 Cursor 연동 방법
+- Cursor Git 기능 활용
+- 문제 해결 가이드
+
+### 3. [VS Code와 Git 연동 가이드](GIT_VSCODE.md)
+- VS Code 설치 및 설정
+- Git과 VS Code 연동 방법
+- VS Code Git 기능 활용
+- 문제 해결 가이드
+
+### 4. [WSL 및 Cursor 원격 접속 가이드](WSL_CURSOR.md)
 - WSL 설치 및 설정 방법
 - Cursor에서 WSL 원격 접속 설정
 - WSL 개발 환경 설정
 - Windows와 WSL Linux 환경 비교
 - WSL 명령어 및 문제 해결
 
-### 3. [Git 및 VS Code 설정 가이드](GIT_VSCODE.md)
-- Git 설치 및 기본 설정
-- VS Code 설치 및 설정
-- Git과 VS Code 연동 방법
-- VS Code Git 기능 활용
-- 문제 해결 가이드
-
-### 4. [AI 기반 코드 에디터 가이드](AI_EDITORS.md)
+### 5. [AI 기반 코드 에디터 가이드](AI_EDITORS.md)
 - Cursor, GitHub Copilot, CodeWhisperer, Tabnine 비교
 - 각 에디터의 설치 및 설정 방법
 - AI 기능 활용 방법
 - 보안 및 법적 고려사항
 - 선택 가이드
 
+### 6. [라즈베리파이 5 설정 가이드](RASPBERRYPI_SETTING.md)
+- 필수 하드웨어 구성품 및 가격
+- 초기 설정 방법
+- 카메라 및 GPIO 설정 (Bookworm 이후)
+- 성능 최적화
+- 문제 해결 가이드
+
+### 7. [라즈베리파이 5 원격 접속 가이드](RASPBERRYPI_CURSOR.md)
+- 사전 요구사항 (네트워크 설정 등)
+- SSH 원격 접속 설정
+- Cursor IDE 설정
+- PowerShell CLI 접속 방법
+- VNC 원격 접속 설정
+- 보안 설정 및 문제 해결
+
 ## 문서 업데이트 내역
+- 2024-04-09: Git 관련 문서 구조 개선 (기본/IDE별 분리)
+- 2024-04-09: 라즈베리파이 5 원격 접속 가이드 업데이트 (사전 요구사항 추가)
+- 2024-04-09: 라즈베리파이 5 설정 가이드 업데이트 (카메라 설정 Bookworm 이후 방식으로 변경)
 - 2024-03-21: Git 및 Cursor 설정 가이드 추가
 - 2024-03-21: WSL 및 Cursor 원격 접속 가이드 추가
 - 2024-03-21: Git 및 VS Code 설정 가이드 추가
 - 2024-03-21: AI 기반 코드 에디터 가이드 추가
+- 2024-03-21: 라즈베리파이 5 설정 가이드 추가
+- 2024-03-21: 라즈베리파이 5 원격 접속 가이드 추가
 
 ## 새로운 문서 추가 방법
 1. 새로운 마크다운(.md) 파일 생성

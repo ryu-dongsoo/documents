@@ -135,3 +135,118 @@ git push -u origin main
 - GitHub에 푸시할 때는 Git Bash를 사용하는 것이 권장됨
 - PowerShell에서는 일부 Git 명령어 실행 시 문제가 발생할 수 있음
 - GitHub 로그인 시 브라우저를 통한 인증이 필요할 수 있음
+
+## 7. Git 주요 명령어 정리
+
+### 기본 명령어
+```bash
+# 저장소 초기화
+git init
+
+# 현재 상태 확인
+git status
+
+# 변경사항 스테이징
+git add <파일명>        # 특정 파일만 스테이징
+git add .              # 모든 변경사항 스테이징
+
+# 커밋
+git commit -m "메시지"  # 변경사항 커밋
+git commit -am "메시지" # add와 commit을 한 번에 실행
+
+# 원격 저장소 연동
+git remote add origin <저장소URL>  # 원격 저장소 추가
+git remote -v                     # 원격 저장소 목록 확인
+git remote remove origin          # 원격 저장소 제거
+
+# 브랜치 관리
+git branch                        # 브랜치 목록 확인
+git branch <브랜치명>             # 새 브랜치 생성
+git checkout <브랜치명>           # 브랜치 전환
+git checkout -b <브랜치명>        # 새 브랜치 생성 및 전환
+git branch -d <브랜치명>          # 브랜치 삭제
+git branch -M main                # 현재 브랜치 이름 변경
+
+# 푸시 및 풀
+git push origin <브랜치명>        # 원격 저장소에 푸시
+git push -u origin main          # 최초 푸시 시 사용
+git pull origin <브랜치명>        # 원격 저장소에서 풀
+
+# 로그 및 히스토리
+git log                          # 커밋 히스토리 확인
+git log --oneline               # 간단한 커밋 히스토리
+git log --graph                 # 그래프 형태로 히스토리 확인
+
+# 변경사항 되돌리기
+git reset HEAD~1                # 마지막 커밋 취소 (변경사항 유지)
+git reset --hard HEAD~1         # 마지막 커밋 취소 (변경사항 삭제)
+git checkout -- <파일명>         # 파일 변경사항 되돌리기
+
+# 스태시
+git stash                       # 현재 변경사항 임시 저장
+git stash list                 # 스태시 목록 확인
+git stash apply                # 가장 최근 스태시 적용
+git stash pop                  # 스태시 적용 후 삭제
+```
+
+### 협업 관련 명령어
+```bash
+# 포크한 저장소 동기화
+git remote add upstream <원본저장소URL>  # 원본 저장소 추가
+git fetch upstream                      # 원본 저장소 변경사항 가져오기
+git merge upstream/main                 # 원본 저장소 변경사항 병합
+
+# 풀 리퀘스트
+git checkout -b feature/기능명          # 기능 브랜치 생성
+# ... 코드 수정 ...
+git add .
+git commit -m "기능 설명"
+git push origin feature/기능명          # 기능 브랜치 푸시
+# GitHub에서 Pull Request 생성
+```
+
+### 설정 관련 명령어
+```bash
+# 사용자 정보 설정
+git config --global user.name "이름"
+git config --global user.email "이메일"
+
+# 설정 확인
+git config --list              # 모든 설정 확인
+git config user.name           # 사용자 이름 확인
+git config user.email          # 이메일 확인
+
+# Git 무시 파일 설정
+# .gitignore 파일 생성 후 무시할 파일/디렉토리 추가
+```
+
+### 고급 명령어
+```bash
+# 리베이스
+git rebase <브랜치명>          # 현재 브랜치를 대상 브랜치에 리베이스
+git rebase -i HEAD~3          # 최근 3개 커밋 수정
+
+# 체리픽
+git cherry-pick <커밋해시>     # 특정 커밋만 현재 브랜치에 적용
+
+# 태그
+git tag <태그명>               # 태그 생성
+git tag -a <태그명> -m "메시지" # 주석이 있는 태그 생성
+git push origin <태그명>        # 태그 푸시
+git push origin --tags         # 모든 태그 푸시
+```
+
+### 문제 해결 명령어
+```bash
+# 충돌 해결
+git status                     # 충돌 상태 확인
+# ... 충돌 해결 ...
+git add <충돌해결된파일>
+git commit -m "충돌 해결"
+
+# 강제 푸시 (주의: 사용 시 신중해야 함)
+git push -f origin <브랜치명>
+
+# 원격 브랜치 삭제
+git push origin --delete <브랜치명>
+```
